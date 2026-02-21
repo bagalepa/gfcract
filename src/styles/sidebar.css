@@ -21,13 +21,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  color: #0b5ed7;
+  color: #15803d;
 }
 
 .sidebar-header button {
   background: none;
   border: none;
-  color: #0b5ed7;
+  color: #15803d;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
@@ -41,7 +41,7 @@
 }
 
 .sidebar-links a {
-  color: #0b5ed7;
+  color: #15803d;
   text-decoration: none;
   font-size: 16px;
 }

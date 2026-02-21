@@ -1,0 +1,84 @@
+.home {
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  background: linear-gradient(to right, #0f172a, #1e293b);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background: #38bdf8;
+  border: none;
+  padding: 12px 25px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-outline {
+  border: 2px solid #38bdf8;
+  background: transparent;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+}
+
+.about,
+.products,
+.industries,
+.cta {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: #f1f5f9;
+  padding: 30px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.industry-list span {
+  margin: 10px;
+  padding: 10px 18px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.cta {
+  background: #0ea5e9;
+  color: white;
+}
+
+.footer {
+  background: #020617;
+  color: #cbd5e1;
+  padding: 30px;
+  text-align: center;
+}
