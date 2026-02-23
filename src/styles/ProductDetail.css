@@ -1,54 +1,116 @@
-.product-detail {
-  padding: 60px 8%;
+.pdf-layout {
+  padding: 90px 6%;
+  background: #f6f7f9;
 }
 
-.detail-wrapper {
+/* BLACK HEADER BAR */
+.pdf-header {
+  background: #111;
+  color: white;
+  padding: 14px 25px;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+/* GREEN TITLE */
+.pdf-title {
+  border: 2px solid #15803d;
+  display: inline-block;
+  padding: 8px 20px;
+  margin: 25px 0;
+  font-weight: 700;
+  color: #15803d;
+  font-size: 1.4rem;
+}
+
+/* BODY */
+.pdf-body {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 35px;
+}
+
+/* LEFT */
+.pdf-left {
   display: flex;
-  gap: 50px;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.detail-wrapper img {
-  width: 340px;
-  max-width: 100%;
-  object-fit: contain;
+.pdf-block h3 {
+  background: #15803d;
+  color: white;
+  padding: 8px 12px;
+  font-size: 0.95rem;
 }
 
-.detail-info h1 {
-  color: #166c2b;
-  font-size: 2.2rem;
+.pdf-block table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
 }
 
-.capacity {
-  margin: 10px 0 20px;
+.pdf-block td {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+}
+
+.pdf-block td:last-child {
+  text-align: right;
   font-weight: 600;
 }
 
-.detail-info ul {
-  list-style: none;
-  padding: 0;
+/* TWO COLUMN INSIDE */
+.small-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
 }
 
-.detail-info li {
-  margin-bottom: 8px;
-  position: relative;
-  padding-left: 18px;
+/* COMPRESSION */
+.compression-box {
+  background: white;
+  padding: 25px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  border: 2px solid #15803d;
 }
 
-.detail-info li::before {
-  content: "✔";
-  color: #1f8f3a;
-  position: absolute;
-  left: 0;
+/* RIGHT SIDE */
+.pdf-right {
+  height: fit-content;
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border: 1px solid #ddd;
 }
 
-.quote-btn {
-  margin-top: 20px;
-  background: #1f8f3a;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  cursor: pointer;
+.pdf-right img {
+  width: 100%;
+  max-width: 220px;
+  margin-bottom: 15px;
+}
+
+.pdf-right h4 {
+  color: #15803d;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pdf-right p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .pdf-body {
+    grid-template-columns: 1fr;
+  }
+
+  .small-grid {
+    grid-template-columns: 1fr;
+  }
 }

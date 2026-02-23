@@ -1,11 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../styles/about.css";
+import factoryImage from "../assets/about_us.png";
 
 const AboutSection = () => {
+  const revealRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-show");
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+
+    revealRefs.current.forEach((el) => observer.observe(el));
+  }, []);
   return (
     <section className="about-section">
       <div className="about-container">
-        <div className="about-text">
+        <div
+          className="about-image reveal-left"
+          ref={(el) => (revealRefs.current[0] = el)}
+        >
+          <img src={factoryImage} alt="Manufacturing Plant" />
+        </div>
+        <div
+          className="about-text reveal-right"
+          ref={(el) => (revealRefs.current[1] = el)}
+        >
           <h2>About Us</h2>
 
           <p>
@@ -29,12 +55,12 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="about-highlight">
+        {/* <div className="about-highlight">
           <h3>Top Quality Lubricant Bucket Services</h3>
-        </div>
+        </div> */}
       </div>
 
-      <div className="about-bottom">
+      {/* <div className="about-bottom">
         <p>
           With growing market demand and future-focused efficiency, Genuine
           Forever Containers established a new plant in Ahmedabad — the upcoming
@@ -43,7 +69,7 @@ const AboutSection = () => {
           which India’s first plastic container for the paint industry was
           introduced.
         </p>
-      </div>
+      </div> */}
     </section>
   );
 };
