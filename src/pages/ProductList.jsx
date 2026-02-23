@@ -19,6 +19,9 @@ export default function ProductList() {
 
   return (
     <section className="product-list">
+      <button className="back-btn" onClick={() => navigate(-1)}>
+        ← Back
+      </button>
       <h2>Our Product Range</h2>
 
       {categories.map((cat) => {

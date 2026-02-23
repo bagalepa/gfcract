@@ -42,13 +42,14 @@
   line-height: 1.1;
   margin-bottom: 20px;
 }
-.overlay-slider button {
+.button {
   width: fit-content;
   padding: 14px 34px;
   border-radius: 40px;
   border: none;
   font-size: 1.1rem;
   font-weight: 600;
+  text-decoration: none;
   background: linear-gradient(135deg, #2fd47a, #2aa6ff);
   color: white;
   cursor: pointer;
@@ -58,7 +59,7 @@
     box-shadow 0.3s ease;
 }
 
-.overlay-slider button:hover {
+.button:hover {
   transform: translateY(-3px);
   box-shadow: 0 16px 40px rgba(42, 166, 255, 0.45);
 }

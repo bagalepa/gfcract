@@ -1,12 +1,27 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { products } from "../data/products";
 import "../styles/ProductDetail.css";
+import { useEffect } from "react";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const product = products.find((p) => p.id === Number(id));
-
+  const navigate = useNavigate();
   if (!product) return <p>Product not found</p>;
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (
+        (e.key === "Backspace" || e.key === "Escape") &&
+        !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)
+      ) {
+        navigate(-1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [navigate]);
 
   const rows = (obj) =>
     Object.entries(obj).map(([k, v]) => (
@@ -18,6 +33,9 @@ export default function ProductDetail() {
 
   return (
     <section className="pdf-layout">
+      <button className="pdf-back" onClick={() => navigate(-1)}>
+        ← Back to Products
+      </button>
       <div className="pdf-header">LUBRICANTS BUCKET</div>
 
       <div className="pdf-title">{product.capacity} LITRE CONTAINER</div>
